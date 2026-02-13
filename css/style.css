@@ -1,0 +1,887 @@
+/* CSS for Sri Ganesha Fresh Fruit Juice */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #34c759;
+    --primary-dark: #248a3d;
+    --accent-orange: #ff9500;
+    --accent-yellow: #ffcc00;
+    --bg-white: #ffffff;
+    --bg-gray: #f0eeee;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.12);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--glass-bg);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all -0.1s ease;
+}
+
+.nav-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 22px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.nav-cta {
+    background: var(--primary-green);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 980px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.1s ease;
+}
+
+.nav-cta:hover {
+    background: var(--primary-dark);
+    transform: scale(1.02);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    /* Mobile viewport fix */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f0f2f5 100%);
+    padding: 140px 20px 80px;
+}
+
+/* Floating Fruit Animations - Made more subtle/premium */
+.floating-fruit {
+    position: absolute;
+    font-size: clamp(60px, 10vw, 100px);
+    opacity: 0.12;
+    pointer-events: none;
+    animation: float 15s ease-in-out infinite;
+    filter: blur(2px);
+    z-index: 1;
+}
+
+/* Adjust positions for better distribution */
+.fruit-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.fruit-2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 5s;
+    font-size: 80px;
+}
+
+.fruit-3 {
+    bottom: 15%;
+    left: 10%;
+    animation-delay: 10s;
+}
+
+.fruit-4 {
+    bottom: 25%;
+    right: 5%;
+    animation-delay: 15s;
+}
+
+.fruit-5 {
+    top: 60%;
+    left: -5%;
+    animation-delay: 7s;
+}
+
+.fruit-6 {
+    top: 40%;
+    right: -2%;
+    animation-delay: 12s;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero h1 {
+    font-size: clamp(53px, 12vw, 96px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Add a gradient accent to specific keywords if wrapped in span, 
+   but since they are breaks, we can keep the dark premium look or restore the color gradient 
+   if the user prefers "freshness". Let's stick to the user's previous colorful gradient but refined. */
+.hero h1 {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 40%, var(--accent-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 10px rgba(52, 199, 89, 0.2));
+}
+
+.hero-subtitle {
+    font-size: clamp(18px, 4vw, 24px);
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 48px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--primary-green);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 980px;
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52, 199, 89, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(52, 199, 89, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-green);
+    padding: 16px 32px;
+    border-radius: 980px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--primary-green);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Quiz Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.quiz-container {
+    background: var(--glass-bg);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .quiz-container {
+    transform: scale(1);
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.quiz-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.quiz-header p {
+    color: var(--text-secondary);
+    font-size: 17px;
+}
+
+.progress-bar {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+    border-radius: 2px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 25%;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.question h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.option:hover {
+    background: rgba(52, 199, 89, 0.1);
+    border-color: var(--primary-green);
+    transform: translateX(4px);
+}
+
+.option.selected {
+    background: rgba(52, 199, 89, 0.15);
+    border-color: var(--primary-green);
+    color: var(--primary-dark);
+}
+
+.option-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.option.selected .option-icon {
+    background: var(--primary-green);
+    color: white;
+}
+
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    gap: 16px;
+}
+
+.btn-nav {
+    padding: 12px 24px;
+    border-radius: 980px;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-next {
+    background: var(--primary-green);
+    color: white;
+    flex: 1;
+}
+
+.btn-next:hover {
+    background: var(--primary-dark);
+}
+
+.btn-prev {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+}
+
+.btn-prev:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.btn-prev.hidden {
+    visibility: hidden;
+}
+
+/* Result Screen */
+.result-screen {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.result-screen.show {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.result-icon {
+    font-size: 80px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.result-juice {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.result-price {
+    font-size: 24px;
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 17px;
+    color: var(--text-primary);
+}
+
+.benefit-icon {
+    font-size: 20px;
+}
+
+.result-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Menu Section */
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.section-header p {
+    font-size: 21px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.menu-category {
+    margin-bottom: 80px;
+}
+
+.category-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-subtitle {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.juice-card {
+    background: var(--bg-white);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.juice-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.juice-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.juice-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    background: var(--bg-gray);
+    display: block;
+}
+
+.juice-card:hover .juice-image {
+    transform: scale(1.05);
+}
+
+.juice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.juice-name {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.juice-price {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.juice-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.benefit-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.benefit-tag span {
+    font-size: 16px;
+}
+
+/* Services Section */
+.services {
+    background: var(--bg-gray);
+    padding: 80px 20px;
+}
+
+.services-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.service-item {
+    padding: 20px;
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.service-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.service-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Contact Section */
+.contact {
+    background: var(--bg-white);
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-gray);
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateX(8px);
+}
+
+.contact-icon-box {
+    width: 44px;
+    height: 44px;
+    background: var(--primary-green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.contact-details h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.contact-details p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #e8e8ed 0%, #d2d2d7 100%);
+    border-radius: 24px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 17px;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-gray);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.footer-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-green);
+    transform: translateY(-4px);
+}
+
+.copyright {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-container {
+        padding: 24px;
+    }
+
+    .floating-fruit {
+        font-size: 40px;
+    }
+}
+
+/* Scroll animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Shake Animation */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+}

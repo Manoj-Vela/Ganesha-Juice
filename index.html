@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Ganesha Fresh Fruit Juice</title>
+    <meta name="description" content="Fresh, healthy, and delicious juices . Dine-in or takeaway available.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <base target="_blank">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍹</span>
+                Sri Ganesha Juice
+            </a>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/919876543210" class="nav-cta">Order Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Floating Fruits Background -->
+        <div class="floating-fruit fruit-1">🍊</div>
+        <div class="floating-fruit fruit-2">🍋</div>
+        <div class="floating-fruit fruit-3">🍉</div>
+        <div class="floating-fruit fruit-4">🍇</div>
+        <div class="floating-fruit fruit-5">🥭</div>
+        <div class="floating-fruit fruit-6">🍍</div>
+
+        <!-- Parallax Side Elements -->
+        <div class="parallax-side parallax-left"></div>
+        <div class="parallax-side parallax-right"></div>
+
+        <div class="hero-content">
+            <h1>Fresh Juices.<br>Real Fruits.<br>Pure Energy.</h1>
+            <p class="hero-subtitle">Made fresh daily in Ganesha Fresh.<br>Dine-in or takeaway.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openQuiz()">
+                    <span>🧠</span> Find My Juice
+                </button>
+                <a href="https://wa.me/919876543210" class="btn-secondary">
+                    <span>🛍️</span> Order Takeaway
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal-overlay">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>Find Your Perfect Juice</h2>
+                <p>Answer 4 quick questions</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+
+            <!-- Questions -->
+            <div class="question active" data-q="1">
+                <h3>What do you need right now?</h3>
+                <div class="options">
+                    <div class="option" data-value="energy">
+                        <span class="option-icon">⚡</span>
+                        <span>Energy boost</span>
+                    </div>
+                    <div class="option" data-value="cooling">
+                        <span class="option-icon">❄️</span>
+                        <span>Cooling refreshment</span>
+                    </div>
+                    <div class="option" data-value="immunity">
+                        <span class="option-icon">🛡️</span>
+                        <span>Immunity support</span>
+                    </div>
+                    <div class="option" data-value="light">
+                        <span class="option-icon">🌿</span>
+                        <span>Light and healthy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" data-q="2">
+                <h3>Preferred taste?</h3>
+                <div class="options">
+                    <div class="option" data-value="sweet">
+                        <span class="option-icon">🍯</span>
+                        <span>Sweet</span>
+                    </div>
+                    <div class="option" data-value="tangy">
+                        <span class="option-icon">🍋</span>
+                        <span>Tangy</span>
+                    </div>
+                    <div class="option" data-value="natural">
+                        <span class="option-icon">🌱</span>
+                        <span>Natural</span>
+                    </div>
+                    <div class="option" data-value="creamy">
+                        <span class="option-icon">🥛</span>
+                        <span>Creamy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" data-q="3">
+                <h3>When are you drinking it?</h3>
+                <div class="options">
+                    <div class="option" data-value="morning">
+                        <span class="option-icon">🌅</span>
+                        <span>Morning</span>
+                    </div>
+                    <div class="option" data-value="afternoon">
+                        <span class="option-icon">☀️</span>
+                        <span>Afternoon</span>
+                    </div>
+                    <div class="option" data-value="evening">
+                        <span class="option-icon">🌆</span>
+                        <span>Evening</span>
+                    </div>
+                    <div class="option" data-value="anytime">
+                        <span class="option-icon">🕐</span>
+                        <span>Anytime</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" data-q="4">
+                <h3>Main health goal?</h3>
+                <div class="options">
+                    <div class="option" data-value="digestion">
+                        <span class="option-icon">🌿</span>
+                        <span>Digestion</span>
+                    </div>
+                    <div class="option" data-value="skin">
+                        <span class="option-icon">✨</span>
+                        <span>Skin glow</span>
+                    </div>
+                    <div class="option" data-value="strength">
+                        <span class="option-icon">💪</span>
+                        <span>Strength</span>
+                    </div>
+                    <div class="option" data-value="detox">
+                        <span class="option-icon">🧹</span>
+                        <span>Detox</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="result-screen" id="resultScreen">
+                <img src="" alt="Result" class="juice-image" id="resultImage"
+                    style="height: 250px; margin-bottom: 24px; display: none;">
+                <!-- Kept icon as backup or remove it? User wanted images. I'll hide icon if image loads, or just replace div with img logic in JS -->
+                <span class="result-icon" id="resultIcon" style="display: none;">🥤</span>
+                <h4 class="result-juice" id="resultJuice">Orange Juice</h4>
+                <p class="result-price" id="resultPrice">₹40</p>
+
+                <div class="benefits-list" id="resultBenefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🛡️</span>
+                        <span>Boosts immunity</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✨</span>
+                        <span>Improves skin glow</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🍊</span>
+                        <span>Rich in vitamin C</span>
+                    </div>
+                </div>
+
+                <div class="result-buttons">
+                    <button class="btn-primary" onclick="orderNow()">Order Now</button>
+                    <button class="btn-secondary" onclick="closeQuiz()">View Menu</button>
+                </div>
+            </div>
+
+            <div class="quiz-nav" id="quizNav">
+                <button class="btn-nav btn-prev hidden" onclick="prevQuestion()">Back</button>
+                <button class="btn-nav btn-next" onclick="nextQuestion()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <div class="section-header fade-in">
+            <h2>Our Menu</h2>
+            <p>Fresh, healthy, and delicious. Every juice is crafted with care.</p>
+        </div>
+
+        <!-- Fresh Juices -->
+        <div class="menu-category fade-in">
+            <h3 class="category-title">🥤 Fresh Juices</h3>
+            <p class="category-subtitle">Pure fruit extracts, no additives</p>
+            <div class="menu-grid">
+                <div class="juice-card">
+                    <img src="pics/lemon.png" alt="Lime Juice" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Lime Juice</span>
+                        <span class="juice-price">₹25</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>💧</span> Hydrates body</div>
+                        <div class="benefit-tag"><span>🌿</span> Improves digestion</div>
+                        <div class="benefit-tag"><span>⚡</span> Quick refreshment</div>
+                    </div>
+                </div>
+
+                <div class="juice-card">
+                    <img src="pics/orange.png" alt="Orange Juice" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Orange</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🛡️</span> Boosts immunity</div>
+                        <div class="benefit-tag"><span>✨</span> Improves skin glow</div>
+                        <div class="benefit-tag"><span>🍊</span> Rich in vitamin C</div>
+                    </div>
+                </div>
+
+                <div class="juice-card">
+                    <img src="pics/watermelon.png" alt="Watermelon Juice" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Watermelon</span>
+                        <span class="juice-price">₹35</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>💧</span> Deep hydration</div>
+                        <div class="benefit-tag"><span>❄️</span> Body cooling</div>
+                        <div class="benefit-tag"><span>❤️</span> Heart-friendly</div>
+                    </div>
+                </div>
+
+                <div class="juice-card">
+                    <img src="pics/Pineapple.jpg" alt="Pineapple Juice" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Pineapple</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🌿</span> Aids digestion</div>
+                        <div class="benefit-tag"><span>🛡️</span> Anti-inflammatory</div>
+                        <div class="benefit-tag"><span>🍍</span> Rich in enzymes</div>
+                    </div>
+                </div>
+
+                <div class="juice-card">
+                    <img src="pics/grapes.jpg" alt="Grape Juice" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Grapes</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>❤️</span> Supports heart health</div>
+                        <div class="benefit-tag"><span>✨</span> Improves skin</div>
+                        <div class="benefit-tag"><span>⚡</span> Natural energy</div>
+                    </div>
+                </div>
+
+                <div class="juice-card">
+                    <img src="pics/wheatgrass.jpg" alt="Wheatgrass Juice" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Wheatgrass</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🧹</span> Natural detox</div>
+                        <div class="benefit-tag"><span>🩸</span> Improves blood health</div>
+                        <div class="benefit-tag"><span>🌱</span> Rich in nutrients</div>
+                    </div>
+                </div>
+
+                <div class="juice-card">
+                    <img src="pics/abc-juice-apple.jpg" alt="ABC Juice" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">ABC Juice</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🧹</span> Detoxifies body</div>
+                        <div class="benefit-tag"><span>✨</span> Enhances skin glow</div>
+                        <div class="benefit-tag"><span>🩸</span> Improves blood flow</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solid Juices -->
+        <div class="menu-category fade-in">
+            <h3 class="category-title">🧊 Solid Juices</h3>
+            <p class="category-subtitle">Thick, pulpy, and refreshing</p>
+            <div class="menu-grid">
+                <div class="juice-card">
+                    <img src="pics/mosambi_juice.jpg" alt="Musambi Solid" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Musambi Solid</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🛡️</span> Boosts immunity</div>
+                        <div class="benefit-tag"><span>🌿</span> Aids digestion</div>
+                        <div class="benefit-tag"><span>💧</span> Hydrates body</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/orange.png" alt="Orange Solid" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Orange Solid</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🍊</span> Rich in vitamin C</div>
+                        <div class="benefit-tag"><span>🛡️</span> Immunity booster</div>
+                        <div class="benefit-tag"><span>✨</span> Improves skin health</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/muskmelon.jpg" alt="Muskmelon Solid" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Muskmelon Solid</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>💧</span> Hydrating fruit</div>
+                        <div class="benefit-tag"><span>❄️</span> Cooling effect</div>
+                        <div class="benefit-tag"><span>🌿</span> Easy digestion</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/papaya.jpg" alt="Papaya Solid" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Papaya Solid</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🌿</span> Supports digestion</div>
+                        <div class="benefit-tag"><span>✨</span> Improves skin</div>
+                        <div class="benefit-tag"><span>🛡️</span> Boosts immunity</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/fruit_shake.jpg" alt="Mixed Fruit Solid" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Mixed Fruit Solid</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🛡️</span> Multi-nutrient boost</div>
+                        <div class="benefit-tag"><span>⚡</span> Natural energy</div>
+                        <div class="benefit-tag"><span>🌿</span> Improves digestion</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/grapes.jpg" alt="Grapes Solid" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Grapes Solid</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>❤️</span> Supports heart health</div>
+                        <div class="benefit-tag"><span>✨</span> Improves skin glow</div>
+                        <div class="benefit-tag"><span>⚡</span> Quick energy source</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Milkshakes -->
+        <div class="menu-category fade-in">
+            <h3 class="category-title">🥛 Milkshakes</h3>
+            <p class="category-subtitle">Creamy, rich, and energizing</p>
+            <div class="menu-grid">
+                <div class="juice-card">
+                    <img src="pics/apple milkshake.jpg" alt="Apple Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Apple Milkshake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>❤️</span> Supports heart health</div>
+                        <div class="benefit-tag"><span>🌿</span> Aids digestion</div>
+                        <div class="benefit-tag"><span>⚡</span> Natural energy boost</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/Pomegrante_Juice.JPG" alt="Pomegranate Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Pomegranate Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🩸</span> Improves blood circulation</div>
+                        <div class="benefit-tag"><span>🛡️</span> Boosts immunity</div>
+                        <div class="benefit-tag"><span>✨</span> Promotes skin glow</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/strawberry-milkshake-4.jpg" alt="Strawberry Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Strawberry Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>✨</span> Good for skin health</div>
+                        <div class="benefit-tag"><span>🛡️</span> Rich in antioxidants</div>
+                        <div class="benefit-tag"><span>🍓</span> Boosts immunity</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/mango-shake-3.jpeg" alt="Mango Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Mango Milkshake</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> Instant energy</div>
+                        <div class="benefit-tag"><span>🥭</span> Rich in vitamins</div>
+                        <div class="benefit-tag"><span>🩺</span> Supports digestion</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/papaya.jpg" alt="Papaya Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Papaya Milkshake</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🌿</span> Improves digestion</div>
+                        <div class="benefit-tag"><span>✨</span> Supports skin health</div>
+                        <div class="benefit-tag"><span>🛡️</span> Boosts immunity</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/butterfruit.jpg" alt="Butterfruit Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Butterfruit Shake</span>
+                        <span class="juice-price">₹70</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>❤️</span> Good for heart health</div>
+                        <div class="benefit-tag"><span>🧠</span> Supports brain function</div>
+                        <div class="benefit-tag"><span>💪</span> Healthy weight gain</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/custard.jpeg" alt="Custard Apple" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Custard Apple</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> High energy fruit</div>
+                        <div class="benefit-tag"><span>🦴</span> Strengthens bones</div>
+                        <div class="benefit-tag"><span>🩸</span> Improves hemoglobin</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/fruit_shake.jpg" alt="Mixed Fruit Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Mixed Fruit Shake</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🛡️</span> Multi-vitamin boost</div>
+                        <div class="benefit-tag"><span>⚡</span> Natural energy</div>
+                        <div class="benefit-tag"><span>🌿</span> Improves digestion</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/muskmelon.jpg" alt="Muskmelon Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Muskmelon Shake</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>💧</span> Keeps body hydrated</div>
+                        <div class="benefit-tag"><span>❄️</span> Cooling effect</div>
+                        <div class="benefit-tag"><span>🌿</span> Supports digestion</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/Oreo-Milkshakes-1-of-1.jpg" alt="Oreo Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Oreo Milkshake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> Instant energy</div>
+                        <div class="benefit-tag"><span>😊</span> Mood booster</div>
+                        <div class="benefit-tag"><span>🥛</span> Calcium-rich base</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/sharjah.jpeg" alt="Sharjah Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Sharjah Milkshake</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> High energy drink</div>
+                        <div class="benefit-tag"><span>💪</span> Strength booster</div>
+                        <div class="benefit-tag"><span>🥛</span> Rich and filling</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/kiwi.jpg" alt="Kiwi Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Kiwi Milkshake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🛡️</span> High in vitamin C</div>
+                        <div class="benefit-tag"><span>❤️</span> Supports heart health</div>
+                        <div class="benefit-tag"><span>🌿</span> Improves digestion</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/Dry-Fruit-Milk-Shake-1-scaled.jpg" alt="Dry Fruit Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Dry Fruit Shake</span>
+                        <span class="juice-price">₹90</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>💪</span> Strength and stamina</div>
+                        <div class="benefit-tag"><span>🧠</span> Supports brain health</div>
+                        <div class="benefit-tag"><span>⚡</span> Long-lasting energy</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/rose.jpg" alt="Rose Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Rose Milkshake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>❄️</span> Cooling for body</div>
+                        <div class="benefit-tag"><span>😊</span> Refreshing taste</div>
+                        <div class="benefit-tag"><span>🌿</span> Aids digestion</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/Banana-Milkshake-5-1.jpg" alt="Banana Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Banana Milkshake</span>
+                        <span class="juice-price">₹35</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> Instant energy</div>
+                        <div class="benefit-tag"><span>🦴</span> Strengthens bones</div>
+                        <div class="benefit-tag"><span>💪</span> Supports weight gain</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/dates milkshake.jpg" alt="Dates Milkshake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Dates Milkshake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>💪</span> Boosts strength</div>
+                        <div class="benefit-tag"><span>🩸</span> Improves hemoglobin</div>
+                        <div class="benefit-tag"><span>⚡</span> Long-lasting energy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ice Cream Milkshakes -->
+        <div class="menu-category fade-in">
+            <h3 class="category-title">🍨 Ice Cream Shakes</h3>
+            <p class="category-subtitle">Indulgent treats with ice cream</p>
+            <div class="menu-grid">
+                <div class="juice-card">
+                    <img src="pics/strawberry-milkshake-4.jpg" alt="Strawberry Ice Cream Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Strawberry Ice Cream Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>😊</span> Mood booster</div>
+                        <div class="benefit-tag"><span>⚡</span> Instant energy</div>
+                        <div class="benefit-tag"><span>🥛</span> Calcium rich</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/pista.jpg" alt="Pista Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Pista Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🧠</span> Supports brain health</div>
+                        <div class="benefit-tag"><span>💪</span> Good for strength</div>
+                        <div class="benefit-tag"><span>🥛</span> Rich in nutrients</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/butterscotch.jpg" alt="Butter Scotch Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Butter Scotch Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> Quick energy</div>
+                        <div class="benefit-tag"><span>😊</span> Mood uplifting</div>
+                        <div class="benefit-tag"><span>🥛</span> Creamy calcium base</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/blackcurrant_shake_01.png" alt="Black Current Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Black Current Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🛡️</span> Rich in antioxidants</div>
+                        <div class="benefit-tag"><span>✨</span> Supports skin health</div>
+                        <div class="benefit-tag"><span>⚡</span> Natural energy</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/chocolate Milkshake.jpg" alt="Chocolate Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Chocolate Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>😊</span> Mood booster</div>
+                        <div class="benefit-tag"><span>⚡</span> Instant energy</div>
+                        <div class="benefit-tag"><span>🥛</span> Calcium source</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/Oreo-Milkshakes-1-of-1.jpg" alt="Oreo Shake" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Oreo Shake</span>
+                        <span class="juice-price">₹60</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> Quick energy</div>
+                        <div class="benefit-tag"><span>😊</span> Treat drink</div>
+                        <div class="benefit-tag"><span>🥛</span> Milk-based nutrition</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/cold coffee.jpg" alt="Cold Coffee" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Cold Coffee</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> Improves alertness</div>
+                        <div class="benefit-tag"><span>🧠</span> Boosts focus</div>
+                        <div class="benefit-tag"><span>❄️</span> Refreshing drink</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/fruit bowl ice cream.jpg" alt="Fruit Bowl Ice Cream" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Fruit Bowl Ice Cream</span>
+                        <span class="juice-price">₹50</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🍎</span> Mixed fruit nutrients</div>
+                        <div class="benefit-tag"><span>⚡</span> Energy boost</div>
+                        <div class="benefit-tag"><span>😊</span> Refreshing dessert</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/gadbad.jpg" alt="Gadbad Ice Cream" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Gadbad Ice Cream</span>
+                        <span class="juice-price">₹100</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> High energy</div>
+                        <div class="benefit-tag"><span>😊</span> Mood booster</div>
+                        <div class="benefit-tag"><span>🍨</span> Rich dessert treat</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lassi -->
+        <div class="menu-category fade-in">
+            <h3 class="category-title">🥛 Lassi</h3>
+            <p class="category-subtitle">Traditional probiotic drink</p>
+            <div class="menu-grid">
+                <div class="juice-card">
+                    <img src="pics/lassi.jpg" alt="Sweet Lassi" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Sweet Lassi</span>
+                        <span class="juice-price">₹30</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>❄️</span> Cools body</div>
+                        <div class="benefit-tag"><span>🌿</span> Aids digestion</div>
+                        <div class="benefit-tag"><span>🦠</span> Good probiotics</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/lassi.jpg" alt="Salt Lassi" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Salt Lassi</span>
+                        <span class="juice-price">₹30</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🌿</span> Aids digestion</div>
+                        <div class="benefit-tag"><span>❄️</span> Cools body</div>
+                        <div class="benefit-tag"><span>💧</span> Rehydrates</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/vanilla.jpg" alt="Vanilla Lassi" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Vanilla Lassi</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🥛</span> Calcium rich</div>
+                        <div class="benefit-tag"><span>❄️</span> Cooling drink</div>
+                        <div class="benefit-tag"><span>😊</span> Light and refreshing</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/strawberry-milkshake-4.jpg" alt="Strawberry Lassi" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Strawberry Lassi</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>✨</span> Good for skin</div>
+                        <div class="benefit-tag"><span>🛡️</span> Antioxidant rich</div>
+                        <div class="benefit-tag"><span>❄️</span> Cooling effect</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="https://loremflickr.com/400/300/butterscotch,drink" alt="Butter Scotch Lassi"
+                        class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Butter Scotch Lassi</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>⚡</span> Energy boost</div>
+                        <div class="benefit-tag"><span>😊</span> Mood refreshing</div>
+                        <div class="benefit-tag"><span>🥛</span> Milk-based nutrition</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/chocolate Milkshake.jpg" alt="Chocolate Lassi" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Chocolate Lassi</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>😊</span> Mood booster</div>
+                        <div class="benefit-tag"><span>⚡</span> Quick energy</div>
+                        <div class="benefit-tag"><span>🥛</span> Calcium rich</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/mango-shake-3.jpeg" alt="Mango Lassi" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Mango Lassi</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>🥭</span> Rich in vitamins</div>
+                        <div class="benefit-tag"><span>❄️</span> Cooling drink</div>
+                        <div class="benefit-tag"><span>⚡</span> Natural energy</div>
+                    </div>
+                </div>
+                <div class="juice-card">
+                    <img src="pics/rose.jpg" alt="Rose Lassi" class="juice-image">
+                    <div class="juice-header">
+                        <span class="juice-name">Rose Lassi</span>
+                        <span class="juice-price">₹40</span>
+                    </div>
+                    <div class="juice-benefits">
+                        <div class="benefit-tag"><span>❄️</span> Body cooling</div>
+                        <div class="benefit-tag"><span>😊</span> Refreshing flavor</div>
+                        <div class="benefit-tag"><span>🌿</span> Supports digestion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-grid">
+            <div class="service-item fade-in">
+                <span class="service-icon">✨</span>
+                <h4 class="service-title">Fresh Daily</h4>
+                <p class="service-desc">Prepared fresh every morning</p>
+            </div>
+            <div class="service-item fade-in">
+                <span class="service-icon">🪑</span>
+                <h4 class="service-title">Dine-in</h4>
+                <p class="service-desc">Comfortable seating available</p>
+            </div>
+            <div class="service-item fade-in">
+                <span class="service-icon">🥡</span>
+                <h4 class="service-title">Takeaway</h4>
+                <p class="service-desc">Quick packaging for you</p>
+            </div>
+            <div class="service-item fade-in">
+                <span class="service-icon">🛡️</span>
+                <h4 class="service-title">Hygienic</h4>
+                <p class="service-desc">Certified clean standards</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-header fade-in">
+            <h2>Visit Us</h2>
+            <p>Come experience freshness at Sri Ganesha Fresh Fruit Juice</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <div class="contact-card">
+                    <div class="contact-icon-box">📍</div>
+                    <div class="contact-details">
+                        <h4>Location</h4>
+                        <p>Sri Ganesha Fresh Fruit Juice<br>Banaswadi, Bangalore<br>Karnataka 560043</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon-box">📞</div>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon-box">⏰</div>
+                    <div class="contact-details">
+                        <h4>Working Hours</h4>
+                        <p>Mon - Sun: 8:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/919876543210" class="btn-primary" style="text-align: center; margin-top: 8px;">
+                    <span>💬</span> Order on WhatsApp
+                </a>
+            </div>
+
+            <div class="map-container" style="border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-soft);">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.95804403087993!2d77.64724732403992!3d13.0147276515727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17605c09724b%3A0x3be8842b57d38d77!2sSri%20Ganesh%20Juice%20Center!5e0!3m2!1sen!2sin!4v1770982720666!5m2!1sen!2sin"
+                    width="100%" height="450" style="border:0; min-height: 300px; display: block;" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">🍹 Sri Ganesha Fresh Fruit Juice</div>
+            <p class="footer-text">Serving freshness and health in Ganesha Fresh since day one.</p>
+            <div class="social-links">
+                <a href="#">📘</a>
+            </div>
+            <p class="copyright">© 2024 Sri Ganesha Fresh Fruit Juice. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
