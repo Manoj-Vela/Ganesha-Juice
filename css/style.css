@@ -134,6 +134,14 @@ nav {
     z-index: 1;
 }
 
+.close-quiz-btn {
+    position: absolute;
+    top: -150px;
+    right: -10px;
+    font-size: 20px;
+    z-index: 10;
+}
+
 /* Adjust positions for better distribution */
 .fruit-1 {
     top: 10%;
